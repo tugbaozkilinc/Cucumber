@@ -1,0 +1,17 @@
+#####CUCUMBER KURULUMU#####
+-Cucumber page object model icin olusturdugumuz klasorler:
+    pages -> page object ler olusturulur
+    runners -> test caseleri run etmek, raporlar eklemek, feature file ile stepdefinitions lari birlestirmek icin olusturulur
+    stepdefinitions -> java code lari yazilir
+    utilities -> reusable method lar, driver, ConfigReader gibi siniflar olusturulur
+-Cucumber feature klasoru
+    Tum feature file lar bu klasore gider
+    Tum test case ler gherkin dilinde bu klasorde yazilir
+-----------19 Subat 2023(Ilk ders)---------------
+1. Feature file olustur
+2. Runner class ini run et
+3. Console dan missing step definitions lari kopyala
+4. stepdefinitions klasorunde GoggleStepDefinitions class i olustur ve oraya yapistir
+5. Step definitionslara gerekli java kodlarini yaz
+NOTE: ELementleri bulmak icin page paketini kullan
+
