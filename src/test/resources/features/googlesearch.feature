@@ -1,20 +1,20 @@
 @google_search
 Feature: US_01 Google Search
 
-  Background: Go to google
-  Given User goes to the google
+  Background: Go to Google
+    Given User goes to "https://www.google.com"
 
   @iphone
   Scenario: TC_01 Google Iphone Search
-  When User searches for iphone
-  Then Assert the result contains iphone
-  Then User close the application
+    When User searches for "iphone"
+    Then Assert the result contains "iphone"
+    Then User close the application
 
   @tesla
   Scenario: TC_02 Google Tesla Search
-  And User searches for tesla
-  Then Assert the result contains tesla
-  Then User close the application
+    And User searches for "tesla"
+    Then Assert the result contains "tesla"
+    Then User close the application
 
 
 #1. Her feature file, Feature:(feature epic anlamina gelir fakat cucumber daki anlami test dosyasi) kelimesi ile baslamak zorundadir.(user story nin id si ve adi yazilir; US_10 Ck Hotels Login)
@@ -24,12 +24,13 @@ Feature: US_01 Google Search
 #5. Her bir test step Given, When, And, Then, But, * kelimelerinden biriyle baslamalidir.
 #6. Given -> Genelde ilk satirlarda pre condition step leri icin kullanilir, Given anahtar kelimesi ile ön koşul yani başlangıç durumu tanımlanır.
 #7. Then -> Genelde son satirlarda, verification step leri icin kullanilir, Then anahtar kelimesi ile de sonuç tanımlanır.
-#8. And, When -> Genelde ara adimlarda baglac olarak kullanilir, When, And anahtar kelimeleri ile olay tanimlanir
-#NOTE: Teknik olarak istenilen kelime istenilen step te kullanilabilir. Ama anlam karmasasi olmamasi icin bu adimlar takip edilir, yoksa Java icin hepsi birdir.
+#8. And, When -> Genelde ara adimlarda baglac olarak kullanilir, When, And anahtar kelimeleri ile olay tanimlanir. Teknik olarak istenilen kelime istenilen step te kullanilabilir.
+#   Ama anlam karmasasi olmamasi icin bu adimlar takip edilir, yoksa Java icin hepsi birdir.
 #9. Belirli scenario lari calistirmak icin cucumber tags ler kullanilir. tags ler Feature, Scenario, Scenario Outline, Examples kelimeleri ile birlikte kullanilabilir.
-#Tag’lari onceden belirledigimiz senaryoları(scenario) çalıştırmak için kullanırız. (Feature: seviyesinde de kullanilir.)
-#Tag’lari senaryolarımızı gruplandırmak için de kullanabiliriz (smoke test, regression test, vs.)
-#10. Her bir Scenario: kelimesinden once tek bir sefer kullanilir.
+#   Tag’lari onceden belirledigimiz senaryoları(scenario) çalıştırmak için kullanırız.(Feature: seviyesinde de kullanilir.)
+#   Tag’lari senaryolarımızı gruplandırmak için de kullanabiliriz(smoke test, regression test, vs.)
+#10.dryRun=false -> dryRun yokmus gibi normal sekilde calisir. Yani tum adimlari tek tek browser da acar.
+#   dryRun=true -> Yeni bir STEP eklendiginde sadece tanimlanmamis step definitions lari olusturmak icin kullanilir, kullanilma sebebi zamandan tasarruftur.
 #BDD(Behaviour driven development/Davranış güdümlü geliştirme): ilk olarak behavior(davranis) veya functionality leri yaziyorsunuz(Epic=Feature, Story, AC, etc), daha
 #sonra development and testing basliyor.
 #Gherkin: Projede her bir behavior için .feature uzantılı bir Gherkin dosyası oluşturulur. Bu feature dosyasına ilgili özelliğin farklı durumlardaki davranışları tanımlanır.

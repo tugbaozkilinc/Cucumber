@@ -19,7 +19,7 @@ import java.util.NoSuchElementException;
 public class Driver {
 
     private static WebDriver driver;
-    private static int timeout = 5;
+    private static int timeout = 10;
     private Driver() {
         //we don't want to create another abject. Singleton pattern
     }

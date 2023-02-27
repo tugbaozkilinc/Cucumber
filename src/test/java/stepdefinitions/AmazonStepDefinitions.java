@@ -1,40 +1,23 @@
 package stepdefinitions;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.AmazonHomePage;
-import utilities.ConfigReader;
 import utilities.Driver;
 
 public class AmazonStepDefinitions {
 
     AmazonHomePage amazonHomePage = new AmazonHomePage();
-    @Given("User goes to the amazon")
-    public void user_goes_to_the_amazon() {
-        Driver.getDriver().get(ConfigReader.getProperty("amazon_url"));
+    @Then("User verifies that he is in current {string}")
+    public void user_verifies_that_he_is_in_current(String string) {
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(string));
     }
 
-    @Given("User searches for teapot")
-    public void user_searches_for_teapot() {
-        amazonHomePage.searchBox.sendKeys("teapot", Keys.ENTER);
-    }
-
-    @Then("Assert the result contains teapot")
-    public void assert_the_result_contains_teapot() {
-        Assert.assertTrue(Driver.getDriver().getTitle().contains("teapot"));
-    }
-
-    @When("User searches for flower")
-    public void user_searches_for_flower() {
-        amazonHomePage.searchBox.sendKeys("flower", Keys.ENTER);
-    }
-
-    @Then("Assert the result contains flower")
-    public void assert_the_result_contains_flower() {
-        Assert.assertTrue(Driver.getDriver().getPageSource().contains("flower"));
+    @When("User searches for {string} in Amazon")
+    public void userSearchesForInAmazon(String arg0) {
+        amazonHomePage.searchBox.sendKeys(arg0, Keys.ENTER);
     }
 
 }
