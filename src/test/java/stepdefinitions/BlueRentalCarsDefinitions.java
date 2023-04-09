@@ -5,7 +5,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.BlueRentalCarsHomePage;
 import pages.BlueRentalCarsLoginPage;
-import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class BlueRentalCarsDefinitions {
 
@@ -26,16 +26,6 @@ public class BlueRentalCarsDefinitions {
         blueRentalCarsLoginPage.passwordBox.sendKeys(string);
     }
 
-    @When("User enters invalid username {string}")
-    public void user_enters_invalid_username(String string) {
-        blueRentalCarsLoginPage.emailBox.sendKeys(string);
-    }
-
-    @When("User enters invalid password {string}")
-    public void user_enters_invalid_password(String string) {
-        blueRentalCarsLoginPage.passwordBox.sendKeys(string);
-    }
-
     @When("User clicks on login button")
     public void user_clicks_on_login_button() {
         blueRentalCarsLoginPage.loginButton.click();
@@ -48,7 +38,7 @@ public class BlueRentalCarsDefinitions {
 
     @Then("User verifies that he is not logged into the page")
     public void user_verifies_that_he_is_not_logged_into_the_page() {
-        Assert.assertTrue(Driver.waitForVisibility(blueRentalCarsLoginPage.errorMessage, 10).isDisplayed());
+        Assert.assertTrue(ReusableMethods.waitForVisibility(blueRentalCarsLoginPage.errorMessage, 10).isDisplayed());
     }
 
 }

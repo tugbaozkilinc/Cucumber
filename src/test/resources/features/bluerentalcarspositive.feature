@@ -1,6 +1,7 @@
 @blue_rental_car_positive
 Feature: US_01 BlueRentalCars Positive Login
 
+  @test_runner
   Scenario Outline: TC_01 User logs in with valid information
     Given User goes to "https://www.bluerentalcars.com/"
     When User clicks on login button to go to login page

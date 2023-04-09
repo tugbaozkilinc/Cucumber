@@ -6,15 +6,15 @@ Feature: Create Personal Test
     When User clicks on new button
     And User enters first name "<firstname>"
     And User enters last name "<lastname>"
-    When User enters positions "<positions>"
-    When User enters office "<office>"
-    When User enters extension "<extension>"
-    When User enters start_date "<start_date>"
-    When User enters salary "<salary>"
-    And User clicks on create button
-    When User searches with "<firstname>"
+    And User enters positions "<positions>"
+    And User enters office "<office>"
+    And User enters extension "<extension>"
+    And User enters start_date "<start_date>"
+    And User enters salary "<salary>"
+    When User clicks on create button
+    And User searches with "<firstname>"
     Then User verifies that the "<firstname>" is created
-    Then User close the application
+    And User close the application
     Examples:
       | firstname | lastname | positions | office   | extension | start_date | salary |
       | john      | walker   | SDET      | Istanbul | 345       | 2023-03-01 | 100000 |

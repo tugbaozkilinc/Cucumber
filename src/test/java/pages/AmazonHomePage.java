@@ -7,9 +7,7 @@ import utilities.Driver;
 
 public class AmazonHomePage {
 
-    public AmazonHomePage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+    public AmazonHomePage() { PageFactory.initElements(Driver.getDriver(), this); }; //initElements(), bir sayfanın elementlerini tanımlamak icin kullanilir.
 
     @FindBy(id = "twotabsearchtextbox")
     public WebElement searchBox;

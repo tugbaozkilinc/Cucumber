@@ -20,4 +20,10 @@ public class BlueRentalCarsHomePage {
     @FindBy(partialLinkText = "CONTINUE RESERVATION")
     public WebElement continueReservationButton;
 
+    @FindBy(xpath = "//a[text()='Logout']")
+    public WebElement logOutLink;
+
+    @FindBy(xpath = "//button[contains(text(), 'OK')]")
+    public WebElement okButton;
+
 }
