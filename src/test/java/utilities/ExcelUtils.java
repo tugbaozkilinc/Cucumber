@@ -45,17 +45,17 @@ public class ExcelUtils {
         return data;
     }
 
-    //===============Getting the number of columns in a specific single row============
+    //Getting the number of columns in a specific single row
     public int columnCount() {
         //getting how many numbers in row 1
         return workSheet.getRow(0).getLastCellNum();
     }
 
-    //===============how do you get the last row number?Index start at 0.===============
+    //how do you get the last row number?Index start at 0.
     public int rowCount() {
         return workSheet.getLastRowNum() + 1; } //adding 1 to get the actual count
 
-    //==============When you enter row and column number, then you get the data=========
+    //When you enter row and column number, then you get the data
     public String getCellData(int rowNum, int colNum) {
         Cell cell;
         try {
@@ -67,7 +67,7 @@ public class ExcelUtils {
         }
     }
 
-    //============getting all data into two dimensional array and returning the data===
+    //getting all data into two dimensional array and returning the data
     public String[][] getDataArray() {
         String[][] data = new String[rowCount()][columnCount()];
         for (int i = 0; i < rowCount(); i++) {
@@ -79,7 +79,7 @@ public class ExcelUtils {
         return data;
     }
 
-    //==============going to the first row and reading each column one by one===========
+    //going to the first row and reading each column one by one
     public List<String> getColumnsNames() {
         List<String> columns = new ArrayList<>();
         for (Cell cell : workSheet.getRow(0)) {
@@ -88,7 +88,7 @@ public class ExcelUtils {
         return columns;
     }
 
-    //=========When you enter the row and column number, returning the value============
+    //When you enter the row and column number, returning the value
     public void setCellData(String value, int rowNum, int colNum) {
         Cell cell;
         Row row;

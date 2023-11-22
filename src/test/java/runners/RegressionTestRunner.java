@@ -11,7 +11,8 @@ import org.junit.runner.RunWith;
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
-                "rerun:target/failed_scenarios.txt"
+                "rerun:target/failed_scenarios.txt",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         monochrome = true,
         features = "./src/test/resources/features",
@@ -23,9 +24,4 @@ import org.junit.runner.RunWith;
 public class RegressionTestRunner {
 }
 
-//Cucumber'da Maven ile yapılan parallel testlerde, base runner'dan ayrı olarak oluşturduğumuz runner'larımızda Hooks kullanmama sebebimiz, Hooks'un senaryo bazlı çalışmasıdır.
-//Her senaryo için ayrı bir Hooks kullanılması gerekir ve bu nedenle birden fazla senaryoyu içeren bir runner dosyasında Hooks kullanmak mümkün değildir.
-//Bunun yerine, parallel testler için genellikle TestNG veya JUnit gibi framework ler kullanılır. Bu framework ler, her senaryo için ayrı bir test metodu kullanarak senaryoları çalıştırır
-//ve Hooks'lar bu test metotlarına uygulanabilir.
-//Özetle, parallel testlerde birden fazla senaryoyu içeren bir runner dosyasında Hooks kullanmak mümkün değildir ve bunun yerine test framework leri tarafından sağlanan Hooks özelliğini
-//kullanmak daha uygundur.
+//Parallel testlerde birden fazla senaryoyu içeren bir runner dosyasında Hooks kullanmak mümkün değildir bunun sebebi Hooks'un senaryo bazlı çalışmasıdır.

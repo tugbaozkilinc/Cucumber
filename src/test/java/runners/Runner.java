@@ -4,7 +4,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class) //@RunWith annotation JUnit ten gelir.
+@RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {
                 "pretty",
@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
                 "rerun:target/failed_scenarios.txt",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
-        monochrome = true, //raporlarin consol da okunakli sekilde cikmasi icindir
+        monochrome = true, //test senaryolarının konsolda siyah beyaz olarak görüntülenmesini sağlar. Bu, senaryoların daha okunaklı ve anlaşılır olmasına yardımcı olur.
         features = "./src/test/resources/features", //features folder path
         glue = {"stepdefinitions", "hooks"}, //stepdefinitions folder path(source root), runner folder ile sibling oldugu icin folder in ismini yazmak yeterli.
         tags = "@dynamic_url",

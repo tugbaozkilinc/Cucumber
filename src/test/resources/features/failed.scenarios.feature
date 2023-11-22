@@ -12,5 +12,4 @@ Feature: Hooks Test
   Scenario: TC_02 Google Tesla Search
     And User searches for "tesla"
     Then Assert the result contains "range rover"
-    And take a screenshot
     Then User close the application

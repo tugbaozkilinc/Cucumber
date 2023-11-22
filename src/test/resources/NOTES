@@ -32,9 +32,10 @@ Scenario Outline Excel ile otomasyon yapmaya benzer, tek fark kullanimi daha kol
 //**********************PARALLEL TEST*****************************
 //Ilk asama: Ilk once maven yuklenir.
 //1. Plugins leri pom.xml e ekle
-//    *surefire ->
-//    *failsafe ->
-//    *cucumber-report -> extra renkli gelismis raporlar verir. Note: Bu parallel test icin degil rapor almak icin eklenir.
+//    *maven-surefire ->
+//    *maven-failsafe ->
+//maven-cucumber-reporting -> extra renkli gelismis raporlar verir.
+//Note: cucumber-reporting plugini sadece mvn command i ile testi run ettiğinde target in altında cucumber-html-reports adındaki klasörün altında rapor oluşturuyor.(bu da paralel test ile çalıştırdığın runner class lardaki tag leri olan feature ların raporlarını verir.)
 NOTE: Cucumber Reporting Linki :
 https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting
 https://github.com/damianszczepanik/maven-cucumber-reporting
@@ -57,6 +58,15 @@ https://github.com/damianszczepanik/maven-cucumber-reporting
 //*******************SPARK REPORTS***********************************
 //1.resources klasorunde extent-config.xml
 //2.resources klasorunde extent.properties
-//3. Spark report dependency pom a ekle: https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter/1.6.0
-//4. Spark report plugin i Runner a ekle; "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+//3.Spark report dependency pom a ekle: https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter/1.6.0
+//4.Spark report plugin i Runner a ekle; "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+
+#CUCUMBER HTML DOSYALARI CLOUD A NASIL EKLENIR?
+#1.resources dosyasinin altında cucumber properties dosyası olustur: cucumber.properties
+#2.Su kodu ekle: cucumber.publish.enabled=true
+#3.Testi calistir. Bu sekilde cucumber html raporu cloud yuklenecektir. Fakat GitHub ile giris yapilmazsa 24 saat icinde silinecektir. Bu yüzden GitHub ile giriş yapalım.
+#4.Login with GitHub a tikla > Authorize SmartBear
+#5.Create Collection
+#6.Token i cucumber.properties e ekle
+#7.Testi tekrar calistir. Collections klasorunde raporlar olusacaktir.
 

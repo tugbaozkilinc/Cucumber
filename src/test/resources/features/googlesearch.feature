@@ -27,7 +27,7 @@ Feature: US_01 Google Search
 #8. And, When -> Genelde ara adimlarda baglac olarak kullanilir, When, And anahtar kelimeleri ile olay tanimlanir. Teknik olarak istenilen kelime istenilen step te kullanilabilir.
 #   Ama anlam karmasasi olmamasi icin bu adimlar takip edilir, yoksa Java icin hepsi birdir.
 #9. Belirli scenario lari calistirmak icin cucumber da tags ler kullanilir.
-#   Tag’lari onceden belirledigimiz senaryoları(scenario) ya da scenario outline lari çalıştırmak için kullanırız.(Feature: seviyesinde de kullanilir.)
+#   Tag’lari onceden belirledigimiz senaryoları(scenario) ya da scenario outline lari çalıştırmak için kullanırız.(Feature: seviyesinde de kullanilabilir.)
 #   Tag’lari senaryolarımızı gruplandırmak için de kullanabiliriz(smoke test, regression test, vs.)
 #10.dryRun=false -> dryRun yokmus gibi normal sekilde calisir. Yani tum adimlari tek tek browser da acar.
 #   dryRun=true -> Yeni bir STEP eklendiginde sadece tanimlanmamis step definitions lari olusturmak icin kullanilir, kullanilma sebebi zamandan tasarruftur.
