@@ -14,7 +14,7 @@ public class Hooks {
         System.out.println("Before Method");
     }
 
-    @After
+    @After //@After("@browser and not @headless")
     public void tearDownScenarios(Scenario scenario){
         System.out.println("After Method");
         if (scenario.isFailed()) {

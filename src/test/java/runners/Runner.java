@@ -4,10 +4,10 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)
+@RunWith(Cucumber.class) //@RunWith is used to run the class. Without this, Runner class will not be runnable
 @CucumberOptions(
         plugin = {
-                "pretty",
+                "pretty", //console bilgilerinin okunaklı olmasını sağlar.
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         monochrome = true, //test senaryolarının konsolda siyah beyaz olarak görüntülenmesini sağlar. Bu, senaryoların daha okunaklı ve anlaşılır olmasına yardımcı olur.
         features = "./src/test/resources/features", //features folder path
         glue = {"stepdefinitions", "hooks"}, //stepdefinitions folder path(source root), runner folder ile sibling oldugu icin folder in ismini yazmak yeterli.
-        tags = "@dynamic_url",
+        tags = "@data_table",
         dryRun = false
 )
 

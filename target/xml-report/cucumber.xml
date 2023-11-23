@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="6.126" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Datatable Login Test" name="TC_01 User Login Test" time="5.932">
+<system-out><![CDATA[
+Given User goes to "https://www.bluerentalcars.com/"........................passed
+When User enters valid username and password................................passed
+And User close the application..............................................passed
+]]></system-out>
+</testcase>
+</testsuite>
