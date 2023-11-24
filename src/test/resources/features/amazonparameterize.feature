@@ -3,7 +3,7 @@ Feature: US_01 Amazon Search
 
   Background: Go to Amazon
     Given User goes to "https://www.amazon.com"
-#Test case/Test script
+#Test case/Test script/Test komut dosyası
   Scenario: TC_01 Amazon Teapot Search
     When User searches for "teapot" in Amazon
     Then Assert the result contains "teapot"
