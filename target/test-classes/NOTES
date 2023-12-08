@@ -30,10 +30,15 @@ Scenario Outline Excel ile otomasyon yapmaya benzer, tek fark kullanimi daha kol
 #Feature file'da yazdığımız case lerde sayı kullanırsak string'lerdeki gibi tırnak içine almadan parametreli method oluşturur
 
 //**********************PARALLEL TEST*****************************
+Parallel Testing yapilma yöntemleri nelerdir?
+-Cucumber
+-TestNG
+-Selenium Grids
+-Jenkins
 //Ilk asama: Ilk once maven yuklenir.
 //1. Plugins leri pom.xml e ekle
-//    *maven-surefire ->
-//    *maven-failsafe ->
+//    *maven-surefire -> Surefire plugin is used to run tests in parallel
+//    *maven-failsafe -> It helps other tests run safely even if a test case fails
 //maven-cucumber-reporting -> extra renkli gelismis raporlar verir.
 //Note: cucumber-reporting plugini sadece mvn command i ile testi run ettiğinde target in altında cucumber-html-reports adındaki klasörün altında rapor oluşturuyor.(bu da paralel test ile çalıştırdığın runner class lardaki tag leri olan feature ların raporlarını verir.)
 NOTE: Cucumber Reporting Linki :
